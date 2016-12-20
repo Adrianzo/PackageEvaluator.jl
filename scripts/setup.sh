@@ -100,7 +100,7 @@ sudo apt-get install wamerican
 # Need xmllint (and others?) for XMLDict.jl
 sudo apt-get install libxml2-utils
 # ArrayFire
-AFSCRIPT=ArrayFire-no-gl-v3.4.0_Linux_x86_64.sh
+AFSCRIPT=ArrayFire-no-gl-v3.4.1_Linux_x86_64.sh
 wget http://ci.arrayfire.org/userContent/Linux/$AFSCRIPT
 sudo chmod +x $AFSCRIPT
 sudo ./$AFSCRIPT --exclude-subdir --prefix=/usr/local
@@ -130,13 +130,13 @@ julia -e "Pkg.init(); println(Pkg.dir())"
 # Run PackageEvaluator
 if [ "$1" == "0.4" ]
 then
-    LOOPOVER=/home/vagrant/.julia/v0.6/METADATA/[A-F]*
+    LOOPOVER=/home/vagrant/.julia/v0.6/METADATA/[A-F,a-f]*
 elif [ "$1" == "0.5" ]
 then
-    LOOPOVER=/home/vagrant/.julia/v0.6/METADATA/[G-N]*;
+    LOOPOVER=/home/vagrant/.julia/v0.6/METADATA/[G-N,g-n]*;
 elif [ "$1" == "0.6" ]
 then
-    LOOPOVER=/home/vagrant/.julia/v0.6/METADATA/[O-Z]*;
+    LOOPOVER=/home/vagrant/.julia/v0.6/METADATA/[O-Z,o-z]*;
 fi
 # For every package name...
 for f in $LOOPOVER;
